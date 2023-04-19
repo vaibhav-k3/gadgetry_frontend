@@ -7,6 +7,24 @@ import Container from '@mui/material/Container';
 
 import ReviewCard from "./ReviewCard";
 
+const DUMMY = {
+    "productName": "TestProduct1",
+    "product_reviews": [
+        {
+            "ReviewId": "6bd15a38-eef6-4475-82ad-6649c047fb19",
+            "reviewText": "A review",
+            "reviewDate": "2023-01-01T00:00:00Z",
+            "reviewRating": 4,
+            "productName": "TestProduct1",
+            "username": "Testuser1"
+        }
+    ],
+    "productBrand": "TestProductBrand",
+    "productDateAdded": "2023-03-08",
+    "productDimensions": "2x3x4",
+    "productImageUrl": "www.exampleUrl.com",
+    "Username": "Testuser1"
+}
 
 const ProductDetails = (props) => {
 
@@ -26,10 +44,13 @@ const ProductDetails = (props) => {
                 </Box>
 
             </Box>
+                
             <Box sx={{ display:'flex', justifyContent: 'center',  flexDirection:'column'}}>
-                <ReviewCard />
-                <ReviewCard />
-                <ReviewCard />
+                {DUMMY.product_reviews.map(
+                    (review) => {
+                        console.log(review.username) ;
+                       return <ReviewCard Username = {review.username} />
+                })}
             </Box>
 
 

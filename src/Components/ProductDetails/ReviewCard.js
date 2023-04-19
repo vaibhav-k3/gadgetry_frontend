@@ -6,7 +6,8 @@ import CardHeader from '@mui/material/CardHeader';
 import Avatar from '@mui/material/Avatar';
 import { red } from '@mui/material/colors';
 const ReviewCard = (props) => {
-
+    console.log("---------------------------")
+    console.log(props)
     const card = <Card sx={{ width: '50vw' , m:1}}>
         <CardContent>
             <CardHeader
@@ -15,7 +16,7 @@ const ReviewCard = (props) => {
                         R
                     </Avatar>
                     }
-                title="Shrimp and Chorizo Paella"
+                title={`${props.Username}`}
                 subheader="September 14, 2016"
                 align = "left"
             />
