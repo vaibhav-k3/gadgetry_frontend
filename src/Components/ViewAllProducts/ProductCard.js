@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '20px', // add border radius for curved corners
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.5)', // add box shadow with 50% opacity
     '&:hover': {
-      transform: 'scale(1.05)',
+      transform: 'scale(1.08)',
       background: "#F87272",
     },
   },
@@ -33,7 +33,7 @@ export function ProductCard(props) {
       <Card className={classes.card}>
         <CardActionArea>
           <CardContent>
-            <CardMedia className = {classes.media} component='img' image="https://source.unsplash.com/random" alt='unsplash image' />
+            <CardMedia className = {classes.media} component='img' image="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg" alt='unsplash image' />
             <br />
             <Typography variant="h5">{props.productName}</Typography>
             <Typography variant="h6">{props.brandName}</Typography>
