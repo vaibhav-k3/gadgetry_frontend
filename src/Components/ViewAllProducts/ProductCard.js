@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   media: {
-    height: 140,
+    height: 190, // decrease height of the image
+    borderRadius: '18px',
   },
   typography: {
     marginTop: theme.spacing(1),
@@ -32,7 +33,7 @@ export function ProductCard(props) {
       <Card className={classes.card}>
         <CardActionArea>
           <CardContent>
-            <CardMedia component='img' image="https://source.unsplash.com/random" alt='unsplash image' />
+            <CardMedia className = {classes.media} component='img' image="https://source.unsplash.com/random" alt='unsplash image' />
             <br />
             <Typography variant="h5">{props.productName}</Typography>
             <Typography variant="h6">{props.brandName}</Typography>
