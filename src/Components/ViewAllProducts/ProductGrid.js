@@ -9,6 +9,10 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
+    background: ''
+  },
+  container: {
+    height: '80vh', // set a fixed height for the container
   },
 }));
 
@@ -16,26 +20,26 @@ export function ProductGrid(props) {
   const classes = useStyles();
 
   // Define an array of product objects
-  const products = [
-    { id: 1, name: 'Product 1', brand: 'Brand A' },
-    { id: 2, name: 'Product 2', brand: 'Brand B' },
-    { id: 3, name: 'Product 3', brand: 'Brand C' },
-    { id: 4, name: 'Product 4', brand: 'Brand D' },
-    { id: 5, name: 'Product 5', brand: 'Brand E' },
-  ];
+  const products = [];
+
+  for (let i = 1; i <= 30; i++) {
+    products.push({ id: i, name: `Product ${i}`, brand: `Brand ${String.fromCharCode(64 + i % 5 + 1)}` });
+  }
 
   // Create an array of ProductCard components
   const cards = products.map((product) => (
-    <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
+    <Grid item xs={2} sm={6} md={4} lg={3} key={product.id}>
       <ProductCard productName={product.name} brandName={product.brand} />
     </Grid>
   ));
 
   return (
     <Box className={classes.center}>
-      <Grid container spacing={3}>
-        {cards}
-      </Grid>
+      <div className={classes.container}>
+        <Grid container spacing={4}>
+          {cards}
+        </Grid>
+      </div>
     </Box>
   );
 }
