@@ -12,7 +12,7 @@ import EditIcon from '@mui/icons-material/Edit';
 const ReviewCard = (props) => {
     console.log("---------------------------")
     console.log(props)
-    const card = <Card sx={{ width: '50vw', m: 1 }}>
+    const card = <Card sx={{ width: '50vw' ,whiteSpace:'nowrap' }}>
         <CardContent>
             <CardHeader
                 avatar={
