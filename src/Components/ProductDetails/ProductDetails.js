@@ -38,19 +38,19 @@ const ProductDetails = (props) => {
 
                 }
             }>
-                <Box component="img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2" />
-                <Box component="div">
-                    This is the product name
+                <Box sx={{ margin: '20px' }} component="img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&w=350&dpr=2" />
+                <Box component="div" sx={{ display: 'flex', alignItems: 'center', height: '40vh', justifyContent: 'center', margin: '20px' }}>
+                    <h2>This is the product name</h2>
                 </Box>
 
             </Box>
-                
-            <Box sx={{ display:'flex', justifyContent: 'center',  flexDirection:'column'}}>
+
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 {DUMMY.product_reviews.map(
                     (review) => {
-                        console.log(review.username) ;
-                       return <ReviewCard Username = {review.username} />
-                })}
+                        console.log(review.username);
+                        return <ReviewCard Username={review.username} />
+                    })}
             </Box>
 
 
