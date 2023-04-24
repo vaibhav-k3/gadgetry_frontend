@@ -8,11 +8,12 @@ import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import ReviewForm from './ReviewForm';
-import { postReview } from './api';
+import { postReview,deleteReview } from './api';
 const ProductDetails = (props) => {
     const productData = useLoaderData()
     const [userReviews , setUserReviews] = useState(productData.product_reviews)
-    const submitReview = (reviewText, reviewRating) =>{
+
+    const submitReview = (reviewText, reviewRating,reviewTitle) =>{
         const reviewDate = new Date().toJSON()
         const productName = productData.productName
         const username = productData.Username
@@ -22,17 +23,33 @@ const ProductDetails = (props) => {
             "reviewDate":reviewDate,
             "reviewRating":reviewRating,
             "productName":productName,
-            "username":username
+            "username":username,
+            "reviewTitle":reviewTitle
         }
         
         let result = postReview(requestPayload)
-        console.log("adsasdasdasd")
         result.then((data)=>{
             setUserReviews((reviews)=>{
                 return [data , ...reviews]
             })
         })
 
+
+    }
+
+    const removeReview = (reviewId) =>{
+        console.log(reviewId)
+        let result = deleteReview(reviewId);
+        result.then((resp)=>{
+            if (resp.ok){
+                console.log(resp.ok)
+                setUserReviews((reviews)=>{
+                    return reviews.filter((review)=>{
+                        return review.ReviewId != reviewId
+                    })
+                })
+            }
+        })
 
     }
     let imageURL = productData.productImageUrl.split(',')[0]
@@ -71,7 +88,10 @@ const ProductDetails = (props) => {
                             (review) => {
                                 return (
                                     <Box>
-                                        <ReviewCard Username={review.username} reviewText={review.reviewText} />
+                                        <ReviewCard Username={review.username} reviewText={review.reviewText} 
+                                                reviewTitle = {review.reviewTitle} removeReview = {removeReview}
+                                                reviewId = {review.ReviewId}
+                                                key = {review.ReviewId} />
                                     </Box>
 
                                 )

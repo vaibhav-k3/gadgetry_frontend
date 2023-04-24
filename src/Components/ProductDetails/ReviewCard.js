@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
@@ -10,6 +10,8 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 const ReviewCard = (props) => {
+    const [reviewId, setReviewId] = useState(props.reviewId)
+    const removeReview = props.removeReview
     const card = <Card sx={{ width: '50vw' ,whiteSpace:'nowrap' }}>
         <CardContent>
             <CardHeader
@@ -23,14 +25,14 @@ const ReviewCard = (props) => {
                 align="left"
             />
             <Typography gutterBottom variant="h5" component="div" align="left">
-                Lizard
+                {props.reviewTitle}
             </Typography>
             <Typography variant="body2" color="text.secondary" align="left">
                 {props.reviewText}
             </Typography>
         </CardContent>
         <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
+            <IconButton aria-label="add to favorites" onClick={(e)=>{removeReview(reviewId)}}>
                 <DeleteIcon />
             </IconButton>
             <IconButton aria-label="share">

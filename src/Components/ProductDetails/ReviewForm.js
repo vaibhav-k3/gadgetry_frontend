@@ -8,6 +8,7 @@ import { useState } from 'react';
 const ReviewForm = (props) => {
     const [inputReviewText , setInputReviewText] = useState('')
     const [inputReviewRating , setInputReviewRating] = useState('')
+    const [inputReviewTitle, setInputReviewTitle] = useState('')
     const getReviewText = (event) =>{
         let reviewText = event.target.value
         setInputReviewText(reviewText)
@@ -19,7 +20,7 @@ const ReviewForm = (props) => {
     }
 
     const sendReview = () =>{
-        props.submitReview(inputReviewText,inputReviewRating)
+        props.submitReview(inputReviewText,inputReviewRating,inputReviewTitle)
     }
 
     const review_form = <Box
@@ -43,6 +44,13 @@ const ReviewForm = (props) => {
             multiline
             maxRows={4}
             onChange={getReviewRating}
+        />
+        <TextField
+            id="ReviewTitle"
+            label="title"
+            multiline
+            maxRows={4}
+            onChange={(e)=>{setInputReviewTitle(e.target.value)}}
         />
         <div>
             <Button variant="contained" endIcon={<SendIcon />} onClick={sendReview} sx={{

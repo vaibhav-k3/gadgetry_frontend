@@ -23,3 +23,10 @@ export const postReview = async (reviewPayload) =>{
 
 
 }
+export const deleteReview = async (reviewId) =>{
+    const API_ENDPOINT = BASE_URL + 'deleteReview/' + encodeURI(reviewId)
+    const response = await fetch(API_ENDPOINT ,{ method : "DELETE"})
+    return response
+
+
+}
