@@ -33,7 +33,7 @@ export function ProductGrid(props) {
   const cards = products.map((product) => {
     let imageURL = product.productImageUrl.split(',')[0]
     return (<Grid item xs={2} sm={6} md={4} lg={3} key={product.id}>
-      <ProductCard productName={product.productName} brandName={product.productBrand} imageURL = {imageURL}/>
+      <ProductCard productName={product.productName} brandName={product.productBrand} imageURL = {imageURL} />
     </Grid>)
   })
 

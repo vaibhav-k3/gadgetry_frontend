@@ -28,5 +28,19 @@ export const deleteReview = async (reviewId) =>{
     const response = await fetch(API_ENDPOINT ,{ method : "DELETE"})
     return response
 
-
 }
+
+export const updateReview = async (reviewId, requestpayload) =>{
+    const API_ENDPOINT = BASE_URL + 'updateReview/' + encodeURI(reviewId)
+    console.log(requestpayload)
+    const response = await fetch(API_ENDPOINT ,{ 
+        method : "PUT",
+        headers :{
+            'Content-type':'application/json'
+        },
+        body : JSON.stringify(requestpayload)
+    
+})
+    return response
+
+} 
