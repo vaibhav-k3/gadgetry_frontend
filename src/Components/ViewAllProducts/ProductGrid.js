@@ -30,11 +30,12 @@ export function ProductGrid(props) {
   // Create an array of ProductCard components
   // let products = []
   // getAllProducts.then(data => products=data)
-  const cards = products.map((product) => (
-    <Grid item xs={2} sm={6} md={4} lg={3} key={product.id}>
-      <ProductCard productName={product.productName} brandName={product.productBrand} />
-    </Grid>
-  ));
+  const cards = products.map((product) => {
+    let imageURL = product.productImageUrl.split(',')[0]
+    return (<Grid item xs={2} sm={6} md={4} lg={3} key={product.id}>
+      <ProductCard productName={product.productName} brandName={product.productBrand} imageURL = {imageURL} />
+    </Grid>)
+  })
 
   return (
     <Box className={classes.center}>

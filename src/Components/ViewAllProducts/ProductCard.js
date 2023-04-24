@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Card, CardActionArea, CardContent, CardMedia, Hidden, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from 'react-router';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -27,13 +28,19 @@ const useStyles = makeStyles((theme) => ({
 
 export function ProductCard(props) {
   const classes = useStyles();
+  const [productName, setProductName] = useState(props.productName)
+  const navigate = useNavigate()
+
+  const handleClick = () =>{
+    navigate('/ViewProductDetails/'+ encodeURI(productName))
+  }
 
   return (
     <Box width="150px" className={classes.boc}>
       <Card className={classes.card}>
-        <CardActionArea>
+        <CardActionArea onClick={handleClick}>
           <CardContent>
-            <CardMedia className = {classes.media} component='img' image="https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg" alt='unsplash image' />
+            <CardMedia className = {classes.media} component='img' image={props.imageURL} alt='unsplash image' />
             <br />
             <Typography variant="h5">{props.productName}</Typography>
             <Typography variant="h6">{props.brandName}</Typography>
