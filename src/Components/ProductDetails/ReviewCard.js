@@ -28,7 +28,7 @@ const ReviewCard = (props) => {
                 Lizard
             </Typography>
             <Typography variant="body2" color="text.secondary" align="left">
-                Lizards
+                {props.reviewText}
             </Typography>
         </CardContent>
         <CardActions disableSpacing>
