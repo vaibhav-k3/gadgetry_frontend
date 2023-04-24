@@ -10,8 +10,6 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 const ReviewCard = (props) => {
-    console.log("---------------------------")
-    console.log(props)
     const card = <Card sx={{ width: '50vw' ,whiteSpace:'nowrap' }}>
         <CardContent>
             <CardHeader
