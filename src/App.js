@@ -4,6 +4,8 @@ import './App.css';
 import { ProductGrid } from './Components/ViewAllProducts/ProductGrid';
 import LoginForm from './Components/LoginPage/LoginForm';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
+import RatingPieChart from './Components/Charts/RatingPieChart';
+
 function App() {
   return (
     
@@ -14,8 +16,9 @@ function App() {
       
     //   <ProductGrid />
     // </div>
-    < ProductDetails />
-    
+    //< ProductDetails />
+    //< LoginForm />
+    < RatingPieChart />
   );
 }
 
