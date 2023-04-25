@@ -7,6 +7,7 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import {getProductDetail} from './Components/ProductDetails/api';
 import getAllProducts from './Components/ViewAllProducts/api';
+import PieChart from './Components/Charts/PieChart';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
     path: "/ViewProductDetails/:requiredProductname",
     element: <ProductDetails />,
     loader : getProductDetail
+  },
+  {
+    path: "/Analytics",
+    element: <PieChart />,
   }
 ]);
 function App() {
