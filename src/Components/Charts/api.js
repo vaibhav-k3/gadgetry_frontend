@@ -10,3 +10,17 @@ export const getRatingData = async (brandName)=>{
     const responsejson = await response.json()
     return responsejson
 }
+
+export const getAllBrands = async ({request , params})=>{
+    const API_ENDPOINT = BASE_URL + 'getAllBrands'
+    const response = await fetch(API_ENDPOINT,{
+        method:"GET",
+        // headers :{
+        //     'Access-Control-Allow-Origin':'nocors'
+        // }
+    })
+    const responsejson = await response.json()
+    return responsejson
+}
+
+

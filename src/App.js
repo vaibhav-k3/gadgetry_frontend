@@ -8,6 +8,7 @@ import { createBrowserRouter , RouterProvider } from 'react-router-dom';
 import {getProductDetail} from './Components/ProductDetails/api';
 import getAllProducts from './Components/ViewAllProducts/api';
 import PieChart from './Components/Charts/PieChart';
+import {getAllBrands} from  './Components/Charts/api'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
   {
     path: "/Analytics",
     element: <PieChart />,
+    loader : getAllBrands
   }
 ]);
 function App() {
