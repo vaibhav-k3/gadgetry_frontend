@@ -12,7 +12,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
-
+import Rating from '@mui/material/Rating';
 import { updateReview } from './api'
 
 const ReviewCard = (props) => {
@@ -59,7 +59,7 @@ const ReviewCard = (props) => {
             <Typography gutterBottom variant="h5" component="div" align="left">
                 {props.reviewTitle}
             </Typography>
-
+            <Rating name="read-only" value={props.rating} readOnly />
             {
                 updatePressed ? (
                     <>

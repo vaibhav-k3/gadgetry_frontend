@@ -91,7 +91,8 @@ const ProductDetails = (props) => {
                                         <ReviewCard Username={review.username} reviewText={review.reviewText} 
                                                 reviewTitle = {review.reviewTitle} removeReview = {removeReview}
                                                 reviewId = {review.ReviewId}
-                                                key = {review.ReviewId} 
+                                                key = {review.ReviewId}
+                                                rating = {review.reviewRating} 
                                                 productName = {review.productName}/>
                                     </Box>
 

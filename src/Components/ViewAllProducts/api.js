@@ -1,4 +1,4 @@
-const URL = "http://127.0.0.1:8000/api/ListCreateProduct"
+const URL = " https://gadgetry-dj-backend.herokuapp.com/ListCreateProduct"
 
 const getAllProducts = async () =>{
 

@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ProductCard } from './ProductCard';
 import getAllProducts from './api';
 import { useLoaderData } from 'react-router-dom';
+import Container from '@mui/material/Container';
 const useStyles = makeStyles((theme) => ({
   center: {
     display: 'flex',
@@ -33,17 +34,20 @@ export function ProductGrid(props) {
   const cards = products.map((product) => {
     let imageURL = product.productImageUrl.split(',')[0]
     return (<Grid item xs={2} sm={6} md={4} lg={3} key={product.id}>
-      <ProductCard productName={product.productName} brandName={product.productBrand} imageURL = {imageURL} />
+      <ProductCard  productName={product.productName} brandName={product.productBrand} imageURL={imageURL} />
     </Grid>)
   })
 
   return (
-    <Box className={classes.center}>
-      <div className={classes.container}>
-        <Grid container spacing={4}>
-          {cards}
-        </Grid>
-      </div>
-    </Box>
+    <Container maxWidth="lg">
+      <Box className={classes.center}>
+        <div className={classes.container} >
+          <Grid container spacing={4}>
+            {cards}
+          </Grid>
+        </div>
+      </Box>
+    </Container>
+
   );
 }
