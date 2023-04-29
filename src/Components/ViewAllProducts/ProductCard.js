@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   typography: {
     marginTop: theme.spacing(1),
   },
+  box: {
+    flexGrow: 1,
+  },
 }));
 
 export function ProductCard(props) {
@@ -36,7 +39,7 @@ export function ProductCard(props) {
   }
 
   return (
-    <Box height="150px" className={classes.boc}>
+    <Box className={classes.box}>
       <Card className={classes.card}>
         <CardActionArea onClick={handleClick}>
           <CardContent>
