@@ -33,7 +33,7 @@ export function ProductGrid(props) {
   // getAllProducts.then(data => products=data)
   const cards = products.map((product) => {
     let imageURL = product.productImageUrl.split(',')[0]
-    return (<Grid item xs={2} sm={6} md={4} lg={3} key={product.id}>
+    return (<Grid item lg={3} key={product.id}>
       <ProductCard  productName={product.productName} brandName={product.productBrand} imageURL={imageURL} />
     </Grid>)
   })
@@ -42,7 +42,7 @@ export function ProductGrid(props) {
     <Container maxWidth="lg">
       <Box className={classes.center}>
         <div className={classes.container} >
-          <Grid container spacing={4}>
+          <Grid container spacing={4} rowSpacing={6}>
             {cards}
           </Grid>
         </div>

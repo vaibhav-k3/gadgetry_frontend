@@ -1,4 +1,4 @@
-const URL = " https://gadgetry-dj-backend.herokuapp.com/ListCreateProduct"
+const URL = "https://gadgetry-dj-backend.herokuapp.com/api/ListCreateProduct"
 
 const getAllProducts = async () =>{
 

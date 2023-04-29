@@ -1,4 +1,4 @@
-const BASE_URL = " https://gadgetry-dj-backend.herokuapp.com/api/"
+const BASE_URL = "https://gadgetry-dj-backend.herokuapp.com/api/"
 
 export const getRatingData = async (brandName)=>{
     const API_ENDPOINT = BASE_URL + 'brandchart?'

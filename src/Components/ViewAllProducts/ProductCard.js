@@ -36,14 +36,14 @@ export function ProductCard(props) {
   }
 
   return (
-    <Box width="150px" height="150px" className={classes.boc}>
+    <Box height="150px" className={classes.boc}>
       <Card className={classes.card}>
         <CardActionArea onClick={handleClick}>
-          <CardContent sx={{overflow: "clip" , height:"200px"}}>
+          <CardContent>
             <CardMedia className = {classes.media} component='img' image={props.imageURL} alt='unsplash image' />
             <br />
-            <Typography variant="h5" sx={{overflow: "clip" , height:"200px"}}>{props.productName}</Typography>
-            <Typography variant="h6" sx={{overflow: "clip" , height:"200px"}}>{props.brandName}</Typography>
+            <Typography variant="h5" >{props.productName}</Typography>
+            <Typography variant="h6" >{props.brandName}</Typography>
             {/* <Typography className={classes.typography} variant="body2" color="text.secondary">Product description</Typography> */}
           </CardContent>
         </CardActionArea>

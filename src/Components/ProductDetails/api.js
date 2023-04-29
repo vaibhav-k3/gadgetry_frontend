@@ -1,6 +1,6 @@
 
 
-const BASE_URL = " https://gadgetry-dj-backend.herokuapp.com/api/"
+const BASE_URL = "https://gadgetry-dj-backend.herokuapp.com/api/"
 
 export const getProductDetail = async ({request , params}) =>{
     const API_ENDPOINT = BASE_URL + 'getProduct/'
